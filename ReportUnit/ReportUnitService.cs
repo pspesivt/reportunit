@@ -30,7 +30,7 @@ namespace ReportUnit
 
             if ((FileAttributes.Directory & attributes) == FileAttributes.Directory)
             {
-                filePathList = new DirectoryInfo(input).GetFiles("*.xml", SearchOption.AllDirectories)
+                filePathList = new DirectoryInfo(input).GetFiles("*.*", SearchOption.AllDirectories)
                     .OrderByDescending(f => f.CreationTime);
             }
             else

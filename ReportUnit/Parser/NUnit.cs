@@ -79,7 +79,8 @@ namespace ReportUnit.Parser
             report.StartTime = 
                 doc.Root.Attribute("start-time") != null 
                     ? doc.Root.Attribute("start-time").Value 
-                    : doc.Root.Attribute("date").Value + " " + doc.Root.Attribute("time").Value;
+                    : (doc.Root.Attribute("date")!= null && doc.Root.Attribute("time") != null) ? 
+                        doc.Root.Attribute("date").Value + " " + doc.Root.Attribute("time").Value : string.Empty;
 
             report.EndTime = 
                 doc.Root.Attribute("end-time") != null 
